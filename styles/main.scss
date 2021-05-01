@@ -1,0 +1,106 @@
+@font-face {
+    font-family: 'Roboto Regular';
+    src: url('../fonts/roboto_regular.eot'); /* IE 9 Compatibility Mode */
+    src: url('../fonts/roboto_regular.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+    url('../fonts/roboto_regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/roboto_regular.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */		url('../fonts/roboto_regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/roboto_regular.svg#roboto_regular') format('svg'); /* Chrome < 4, Legacy iOS */
+}
+ body {
+    margin: 0;
+    padding: 0;
+}
+.header{
+    width: 100%;
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1210px;
+        margin: 0 auto;
+    }   
+    &__left {
+        display: flex;
+        &_img {
+            margin-left: 30px;
+            margin-right: 20px;
+        }    
+        &_title {
+            max-width: 153px;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 16px;
+            color: #641A20;
+        }
+        &__hr {
+            width: 100%;
+            size: 10px;
+            background-color:#641A20;
+            align-items: center;
+            height: 8px;
+            margin-top: -5px;
+        }
+    }
+        
+     
+    &__right {
+        margin-right: 65px;
+        &_links {
+            list-style: none;
+            display: flex;
+            li {
+                margin-right: 10px;
+                a {
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 19px;
+                    color: #545454;
+                    text-decoration: none;
+                    position: relative;
+                    &:after{
+                        position: absolute;
+                        content: '';
+                        width: 0;
+                        left: 0;
+                        bottom: -5px;
+                        transition: .4s;
+                        height: 2px;
+                        background-color: #641A20;
+                    }
+                    &:hover{
+                        &:after{
+                            width: 65%;
+                            transition: .4s;
+                        }
+                    }
+                }
+            }
+        }
+    } 
+    &_photo {
+        width: 100%;
+        height: 650px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 50%;
+        }
+    }         
+    &__hr {
+        width: 100%;
+        size: 10px;
+        background-color:#641A20;
+        align-items: center;
+        height: 10px;
+        margin-top: -5px;
+    }
+}
+.cards{
+    display: flex;
+}
