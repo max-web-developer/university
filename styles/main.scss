@@ -1,15 +1,29 @@
-@font-face {
-    font-family: 'Roboto Regular';
-    src: url('../fonts/roboto_regular.eot'); /* IE 9 Compatibility Mode */
-    src: url('../fonts/roboto_regular.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
-    url('../fonts/roboto_regular.woff2') format('woff2'), /* Super Modern Browsers */
-    url('../fonts/roboto_regular.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */		url('../fonts/roboto_regular.ttf') format('truetype'), /* Safari, Android, iOS */
-    url('../fonts/roboto_regular.svg#roboto_regular') format('svg'); /* Chrome < 4, Legacy iOS */
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
  body {
     margin: 0;
     padding: 0;
 }
+a {
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #E0E0E0;
+  border-radius: 2px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #641A20;
+  border-radius: 2px;
+}  
+
 .header{
     width: 100%;
     &__top {
@@ -99,8 +113,337 @@
         align-items: center;
         height: 10px;
         margin-top: -5px;
+        margin-bottom: 20px;
     }
 }
-.cards{
-    display: flex;
+.cards {
+    position: relative;
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        margin-top: 25px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    &__button {
+        position: absolute;
+        right: -40px;
+        top: 50%;
+        transform: translateY(-50%);
+        button {
+            transform: rotate(-90deg);
+            background: #881821;
+            border-radius: 5px;
+            border: 0;
+            padding: 8px 21px;
+
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 30px;
+            color: #FFFFFF;
+        }
+    }
 }
+.card{
+    &__photo {
+        min-height: 83px;
+        margin-top: 20px;
+    }
+    &__subtitle {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        color: #6B6969;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+        
+       a {
+        text-decoration: none;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        color: #6B6969;
+        text-align: center;
+       }
+       &__button{
+        transform: rotate(-90deg);
+        left: 1394px;
+        top: 702px;
+        background: #881821;
+        border-radius: 5px
+       }     
+}
+.news{
+   display: flex;
+   justify-content: space-between;
+   max-width: 1062px;
+   margin: 65px auto 0;
+   &__left {
+       margin-top: 55px;
+   }
+   &__right {
+       width: 100%;
+       max-width: 526px;
+   }
+    &__title {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 30px;
+        color: rgba(0, 0, 0, 0.8);
+    }
+    &__subtitle {
+        color: #E5E5E5;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-size: 22px;
+        line-height: 30px;
+    }
+    &__text {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 30px;
+        color: rgba(0, 0, 0, 0.8);
+        max-width: 600px;
+    }
+    &__date {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 20px;
+        text-transform: uppercase;
+        color: #641A20;
+    }
+    &__inf {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 18px;
+        color: rgba(0, 0, 0, 0.8);
+    }
+    &__button {
+        padding-top: 15px;
+        button {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            color: #FFFFFF;
+            background: #641A20;
+            border-radius: 10px;
+            border: none;
+            padding: 13px 24px;
+        }
+    }
+        
+    
+    &__title_lg {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 30px;
+        text-align: center;
+        text-transform: uppercase;            
+        color: #641A20;
+    }
+    &__wrapper {
+        margin-top: 27px;
+        max-height: 651px;
+        max-width: 526px;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+    &__card {
+        max-width: 495px;
+        box-sizing: border-box;
+        padding: 14px 21px;
+        display: flex;
+        align-items: center;
+        background: #FFFFFF;
+        border: 1px solid #A99F9F;
+        transition: .4s;
+        margin-bottom: 5px;
+        &:hover {
+            transition: .4s;
+            background: #F3F3F3;
+            border: 1px solid #881821;
+            .news__calendar {
+                transition: .4s;
+                background: #fff;
+            }
+        }
+    }           
+    
+    &__calendar {
+        transition: .4s;
+        background: #EDEDED;
+        border-radius: 5px;
+        &_top {
+            background: #641A20;
+            border-radius: 5px 5px 0px 0px;
+            padding: 3px 18px 2px;
+        }
+        &_bottom {
+            text-align: center;
+            padding-bottom: 3px;
+        }
+        .month {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 12px;
+            line-height: 14px;
+            color: #FFFFFF;
+        }
+        .day {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 24px;
+            line-height: 28px;
+            color: #6B6969;
+        }
+        .tributeOfTheWeek {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 8px;
+            line-height: 9px;
+            color: #6B6969;
+        }
+    }
+    
+    &__description {
+        max-width: 345px;
+        margin-left: 22px;
+        &_time {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 18px;
+            line-height: 21px;
+            color: #641A20;
+        }
+        &_link {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 18px;
+            line-height: 21px;
+            color: #641A20;
+        }
+        &_text {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 21px;
+            color: #000;
+        }
+    }
+}
+.sponsors {
+    width: 100%;
+    position: relative;
+    margin-top: 149px;
+    margin-bottom: 347px;
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1114px;
+        margin: 0 auto;
+    }
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+        opacity: .5;
+        z-index: -1;
+        &_img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -2;
+            background: transparent url('../images/png/1.png') 50% 50%/cover;
+        }
+        &_red {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 40.6%;
+            z-index: -1;
+            background: #641A20;
+            opacity: .9;
+        }
+    }
+    &__left {
+        .sponsors__image {
+            &:first-child {
+                margin-top: -50px;
+                margin-bottom: 10px;
+            }
+            &:last-child {
+                margin-top: 10px;
+                margin-bottom: -50px;
+            }
+        }
+    }
+    &__right {
+        margin-top: 140px;
+
+        background: #fff;
+        border: 2px solid #641A20;
+        max-width: 458px;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 83px 80px 67px;
+        text-align: center;
+
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 30px;
+        color: rgba(0, 0, 0, 0.8);
+        position: relative;
+        &_bg {
+            position: absolute;
+            top: 53px;
+            left: 72px;
+            right: -72px;
+            bottom: -53px;
+            z-index: -1;
+            background: #641A20;
+            opacity: .9;
+        }
+    }
+}
+    
+    
+
+    
+
+    
+
+    
+   
